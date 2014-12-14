@@ -11,8 +11,8 @@ class CopyFromFindInFilesCommand(sublime_plugin.TextCommand):
         clipboard_contents = sublime.get_clipboard()
 
         if clipboard_contents:
-            re.sub(r'insert_regex_here', '', clipboard_contents)
-            sublime.set_clipboard(clipboard_contents)
+            new_clipboard = [re.sub(r'^\s*\d+\:?', '', line) for line in clipboard_contents.splitlines()]
+            sublime.set_clipboard('\n'.join(new_clipboard))
 
     def in_find_results_view(self):
         return self.view.settings().get('syntax') == 'Packages/Default/Find Results.hidden-tmLanguage'
