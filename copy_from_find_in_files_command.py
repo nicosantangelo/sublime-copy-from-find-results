@@ -18,8 +18,8 @@ class CopyFromFindInFilesCommand(sublime_plugin.TextCommand):
         return self.view.settings().get('syntax') == 'Packages/Default/Find Results.hidden-tmLanguage'
 
 class RegexStruct():
-    default = r'^\s*\d+\:?'
-    without_dots = r'^\s*(\d+\:?|.+)'
+    default=r'^\s*\d+(\:\s|\s{2})'
+    without_dots=r'^\s*(\d+(\:\s|\s{2})|.+\n)'
 
     def __init__(self, keep_dots=True):
         self.keep_dots = keep_dots
