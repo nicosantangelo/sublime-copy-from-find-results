@@ -18,3 +18,17 @@ So you can just map it to the default copy action:
 ````
 
 If you don't like remapping, copy, just use `copy_from_find_in_files` on any keys you like.
+
+Lastly, if you want to be extra careful, you can map the keybiding only for find-in-files directly like this:
+
+````javascript
+// Linux or Windows
+{ "keys": ["ctrl+c"], "command": "copy_from_find_in_files", 
+    "context": [{ "key": "selector", "operator": "equal", "operand": "text.find-in-files" }]
+}
+
+// MacOS
+{ "keys": ["super+c"], "command": "copy_from_find_in_files", 
+    "context": [{ "key": "selector", "operator": "equal", "operand": "text.find-in-files" }]
+}
+````
