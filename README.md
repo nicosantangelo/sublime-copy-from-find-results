@@ -1,6 +1,8 @@
 Sublime Copy from find in files
 ===============================
 
+[![Build Status](https://travis-ci.org/NicoSantangelo/sublime-copy-from-find-in-files.svg?branch=master)](https://travis-ci.org/NicoSantangelo/sublime-copy-from-find-in-files)
+
 Little package to remove the line number when copying from the find in files panel
 
 ## Use
