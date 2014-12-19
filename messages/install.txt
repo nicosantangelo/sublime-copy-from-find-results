@@ -1,3 +1,22 @@
 Thanks for installing!!
 ======================
 
+Just a reminder:
+
+There is no default shortcut, to add it open your User Keybindings file and add something like the following:
+
+// Linux or Windows
+{ "keys": ["ctrl+c"], "command": "copy_from_find_in_files", 
+    "context": [{ "key": "selector", "operator": "equal", "operand": "text.find-in-files" }]
+}
+
+// MacOS
+{ "keys": ["super+c"], "command": "copy_from_find_in_files", 
+    "context": [{ "key": "selector", "operator": "equal", "operand": "text.find-in-files" }]
+}
+
+For more info go to:
+    https://github.com/NicoSantangelo/sublime-copy-from-find-in-files
+
+
+Thanks!
