@@ -4,10 +4,10 @@ import re
 
 
 class CopyFromFindInFilesCommand(sublime_plugin.TextCommand):
-    def run(self, edit):
+    def run(self, edit, force=False):
         self.view.run_command('copy')
 
-        if not self.in_find_results_view():
+        if not self.in_find_results_view() and not force:
             return
 
         clipboard_contents = sublime.get_clipboard()
