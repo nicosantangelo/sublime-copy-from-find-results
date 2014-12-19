@@ -7,21 +7,28 @@ Little package to remove the line number when copying from the find in files pan
 
 ## Use
 
-The command is designed to only work on the `Find Results` tab and just copy otherwise.
+The command is designed to only work on the `Find Results` tab and default to a normal copy otherwise.
 
-So you can just map it to the default copy action:
+It will transform this:
 
-````javascript
-// Linux or Windows
-{ "keys": ["ctrl+c"], "command": "copy_from_find_in_files" }
-
-// MacOS
-{ "keys": ["super+c"], "command": "copy_from_find_in_files" }
+````
+6  class CopyFromFindInFilesCommand(sublime_plugin.TextCommand):
+7:     def run(self, edit):
+8          self.view.run_command('copy')
 ````
 
-If you don't like remapping, copy, just use `copy_from_find_in_files` on any keys you like.
+to this:
 
-Lastly, if you want to be extra careful, you can map the keybiding only for find-in-files directly like this:
+````
+class CopyFromFindInFilesCommand(sublime_plugin.TextCommand):
+    def run(self, edit):
+        self.view.run_command('copy')
+
+````
+
+## KeyBindings
+
+There is no default shortcut, to add it open your User Keybindings file and add something like the following:
 
 ````javascript
 // Linux or Windows
@@ -32,5 +39,32 @@ Lastly, if you want to be extra careful, you can map the keybiding only for find
 // MacOS
 { "keys": ["super+c"], "command": "copy_from_find_in_files", 
     "context": [{ "key": "selector", "operator": "equal", "operand": "text.find-in-files" }]
+}
+````
+
+using `"context": [{ "key": "selector", "operator": "equal", "operand": "text.find-in-files" }]` it's being extra careful, you can leave that out and the package will check for `Find Results` for you.
+
+### Outside Find in Files
+
+If you want to use the package outside `Find Results` you can add a the `force` argument, like this:
+
+````javascript
+// Linux or Windows
+{ "keys": ["ctrl+alt+c"], "command": "copy_from_find_in_files",
+    "args": { "force": true }
+}
+
+// MacOS
+{ "keys": ["super+alt+c"], "command": "copy_from_find_in_files", 
+    "args": { "force": true }
+}
+````
+
+## Settings
+
+````javascript
+{
+    // If set to false, it removes the dots added by sublime to mark the separation between matches in the same file.
+    "keep_intermediate_dots": true
 }
 ````
