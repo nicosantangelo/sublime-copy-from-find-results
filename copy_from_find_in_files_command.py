@@ -23,14 +23,14 @@ class CopyFromFindInFilesCommand(sublime_plugin.TextCommand):
 
 
 class RegexStruct():
-    default = r'^\s*\d+(\:\s|\s{2})'
-    without_dots = r'^\s*(\d+(\:\s|\s{2})|.+\n)'
+    default = re.compile('^\s*\d+(\:\s|\s{2})', re.MULTILINE)
+    without_dots = re.compile('^\s*(\d+(\:\s|\s{2})|.+\n)', re.MULTILINE)
 
     def __init__(self, keep_dots=True):
         self.keep_dots = keep_dots
 
     def sub(self, text):
-        return re.sub(self.construct(), '', text, flags=re.MULTILINE)
+        return self.construct().sub('', text)
 
     def construct(self):
         return RegexStruct.default if self.keep_dots else RegexStruct.without_dots
