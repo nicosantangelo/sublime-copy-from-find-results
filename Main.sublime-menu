@@ -1,0 +1,67 @@
+[
+    {
+        "caption": "Preferences",
+        "mnemonic": "n",
+        "id": "preferences",
+        "children":
+        [
+            {
+                "caption": "Package Settings",
+                "mnemonic": "P",
+                "id": "package-settings",
+                "children":
+                [
+                    {
+                        "caption": "CopyFromFindInFiles",
+                        "children":
+                        [
+                            // Settings
+                            {
+                                "command": "open_file",
+                                "args": {"file": "${packages}/CopyFromFindInFiles/CopyFromFindInFiles.sublime-settings"},
+                                "caption": "Settings – Default"
+                            },
+                            {
+                                "command": "open_file",
+                                "args": {"file": "${packages}/User/CopyFromFindInFiles.sublime-settings"},
+                                "caption": "Settings – User"
+                            },
+                            { "caption": "-" },
+                            // Keybindings - User
+                            {
+                                "caption": "Key Bindings – User",
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/User/Default (OSX).sublime-keymap",
+                                    "platform": "OSX"
+                                }
+                            },
+                            {
+                                "caption": "Key Bindings – User",
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/User/Default (Linux).sublime-keymap",
+                                    "platform": "Linux"
+                                }
+                            },
+                            {
+                                "caption": "Key Bindings – User",
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/User/Default (Windows).sublime-keymap",
+                                    "platform": "Windows"
+                                }
+                            },
+                            { "caption": "-" },
+                            // README
+                            {
+                                "caption": "View README in Github",
+                                "command": "open_url", "args": { "url": "https://github.com/NicoSantangelo/sublime-copy-from-find-in-files" }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
