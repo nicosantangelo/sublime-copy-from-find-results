@@ -68,3 +68,17 @@ If you want to use the package outside `Find Results` you can add a the `force` 
     "keep_intermediate_dots": true
 }
 ````
+
+## Installation
+
+### PackageControl
+If you have [PackageControl](http://wbond.net/sublime_packages/package_control) installed, you can use it to install the package.
+
+Just type `cmd-shift-p`/`ctrl-shift-p` to bring up the command pallete and pick `Package Control: Install Package` from the dropdown, search and select the package and you're all set.
+
+### Manual
+
+You can clone the repo in your `/Packages` (*Preferences -> Browse Packages...*) folder and start using/hacking it.
+    
+    cd ~/path/to/Packages
+    git clone git://github.com/NicoSantangelo/sublime-copy-from-find-in-files.git CopyFromFindInFiles
