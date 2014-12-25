@@ -3,7 +3,7 @@ import sublime_plugin
 import re
 
 
-class CopyFromFindInFilesCommand(sublime_plugin.TextCommand):
+class CopyFromFindResultsCommand(sublime_plugin.TextCommand):
     def run(self, edit, force=False):
         self.view.run_command('copy')
 
@@ -13,7 +13,7 @@ class CopyFromFindInFilesCommand(sublime_plugin.TextCommand):
         clipboard_contents = sublime.get_clipboard()
 
         if clipboard_contents:
-            settings = sublime.load_settings('CopyFromFindInFiles.sublime-settings')
+            settings = sublime.load_settings('CopyFromFindResults.sublime-settings')
             keep_intermediate_dots = settings.get('keep_intermediate_dots', False)
             new_clipboard = RegexStruct(keep_intermediate_dots).sub(clipboard_contents)
             sublime.set_clipboard(new_clipboard)

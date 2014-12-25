@@ -1,7 +1,7 @@
-Sublime Copy from find in files
+Sublime Copy from Find Results
 ===============================
 
-[![Build Status](https://travis-ci.org/NicoSantangelo/sublime-copy-from-find-in-files.svg?branch=master)](https://travis-ci.org/NicoSantangelo/sublime-copy-from-find-in-files)
+[![Build Status](https://travis-ci.org/NicoSantangelo/sublime-copy-from-find-results.svg?branch=master)](https://travis-ci.org/NicoSantangelo/sublime-copy-from-find-results)
 
 Little package to remove the line number when copying from the find in files panel
 
@@ -12,7 +12,7 @@ The command is designed to only work on the `Find Results` tab and default to a 
 It will transform this:
 
 ````
-6  class CopyFromFindInFilesCommand(sublime_plugin.TextCommand):
+6  class CopyFromFindResultsCommand(sublime_plugin.TextCommand):
 7:     def run(self, edit):
 8          self.view.run_command('copy')
 ````
@@ -20,7 +20,7 @@ It will transform this:
 to this:
 
 ````
-class CopyFromFindInFilesCommand(sublime_plugin.TextCommand):
+class CopyFromFindResultsCommand(sublime_plugin.TextCommand):
     def run(self, edit):
         self.view.run_command('copy')
 
@@ -32,12 +32,12 @@ There is no default shortcut, to add it open your User Keybindings file and add 
 
 ````javascript
 // Linux or Windows
-{ "keys": ["ctrl+c"], "command": "copy_from_find_in_files", 
+{ "keys": ["ctrl+c"], "command": "copy_from_find_results", 
     "context": [{ "key": "selector", "operator": "equal", "operand": "text.find-in-files" }]
 }
 
 // MacOS
-{ "keys": ["super+c"], "command": "copy_from_find_in_files", 
+{ "keys": ["super+c"], "command": "copy_from_find_results", 
     "context": [{ "key": "selector", "operator": "equal", "operand": "text.find-in-files" }]
 }
 ````
@@ -50,12 +50,12 @@ If you want to use the package outside `Find Results` you can add a the `force` 
 
 ````javascript
 // Linux or Windows
-{ "keys": ["ctrl+alt+c"], "command": "copy_from_find_in_files",
+{ "keys": ["ctrl+alt+c"], "command": "copy_from_find_results",
     "args": { "force": true }
 }
 
 // MacOS
-{ "keys": ["super+alt+c"], "command": "copy_from_find_in_files", 
+{ "keys": ["super+alt+c"], "command": "copy_from_find_results", 
     "args": { "force": true }
 }
 ````
@@ -81,4 +81,4 @@ Just type `cmd-shift-p`/`ctrl-shift-p` to bring up the command pallete and pick 
 You can clone the repo in your `/Packages` (*Preferences -> Browse Packages...*) folder and start using/hacking it.
     
     cd ~/path/to/Packages
-    git clone git://github.com/NicoSantangelo/sublime-copy-from-find-in-files.git CopyFromFindInFiles
+    git clone git://github.com/NicoSantangelo/sublime-copy-from-find-results.git "Copy from Find Results"

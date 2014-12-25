@@ -1,6 +1,6 @@
 [
     {
-      "caption": "Copy from find in files",
-      "command": "copy_from_find_in_files"
+      "caption": "Copy from Find Results",
+      "command": "copy_from_find_results"
     }
 ]
