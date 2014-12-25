@@ -24,7 +24,7 @@ class CopyFromFindResultsCommand(sublime_plugin.TextCommand):
 
 class RegexStruct():
     default = re.compile('^\s*\d+(\:\s|\s{2})', re.MULTILINE)
-    without_dots = re.compile('^\s*(\d+(\:\s|\s{2})|.+)', re.MULTILINE)
+    without_dots = re.compile('^\s*(\d+(\:\s|\s{2})|\.+)', re.MULTILINE)
 
     def __init__(self, keep_dots=True):
         self.keep_dots = keep_dots
