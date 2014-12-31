@@ -65,7 +65,7 @@ If you want to use the package outside `Find Results` you can add a the `force` 
 ````javascript
 {
     // If set to false, it removes the dots added by sublime to mark the separation between matches in the same file.
-    "keep_intermediate_dots": true
+    "keep_intermediate_dots": false
 }
 ````
 
